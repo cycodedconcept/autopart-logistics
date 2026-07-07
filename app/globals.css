@@ -1,8 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F6F6F7;
   --foreground: #171717;
+  --aorange: #ff7101;
+  --dark-gray: #151515;
+  --light-gray: #575757;
+  --light-green: #17b26a;
+  --light-red: #f04438;
+  --ared: #d92d20;
+  --agreen: #079455;
+  --apurple: #7644c3;
+  --ayellow: #fdb022;
+  --abrown: #8c3e01;
+  --apink: #d5829c;
+  --alemon: #7ed321;
+  --agray: #A5A5A5;
+  --agray-border: #D7D7D7;
+  --alight-gray-border: #EDEDED;
+
 }
 
 @theme inline {
@@ -10,14 +26,29 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-aorange: var(--aorange);
+  --color-dark-gray: var(--dark-gray);
+  --color-light-gray: var(--light-gray);
+  --color-light-green: var(--light-green);
+  --color-light-red: var(--light-red);
+  --color-ared: var(--ared);
+  --color-agreen: var(--agreen);
+  --color-apurple: var(--apurple);
+  --color-ayellow: var(--ayellow);
+  --color-abrown: var(--abrown);
+  --color-apink: var(--apink);
+  --color-alemon: var(--alemon);
+  --color-agray: var(--agray);
+  --color-agray-border: var(--agray-border);
+  --color-alight-gray-border: var(--alight-gray-border);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
