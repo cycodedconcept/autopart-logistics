@@ -16,11 +16,15 @@ const Header = () => {
 
   function handleSearch(q: string) {}
   return (
-    <div className="flex items-center justify-between w-full pt-1">
-      <p className="w-2/4 capitalize text-dark-gray text-[32px] font-medium font-instrument-sans">
+    <div className="flex items-center justify-between w-full pt-1 pb-2 lg:pb-0">
+      <p className="w-2/4 capitalize text-dark-gray text-2xl md:text-[32px] font-medium font-instrument-sans">
         {active}
       </p>
-      <div className="flex items-center gap-4">
+      <div className="flex lg:hidden items-center gap-2 bg-background border border-agray-border rounded-3xl h-11 px-2">
+          <Image src={bulb} alt="" className="w-7" />
+          <Image src={moon} alt="" className="w-5" />
+        </div>
+      <div className="hidden lg:flex items-center gap-4">
         <div className="flex items-center gap-2 bg-background border border-agray-border rounded-3xl h-11 pl-2 pr-7">
           <Image src={bulb} alt="" className="w-7" />
           <Image src={moon} alt="" className="w-5" />

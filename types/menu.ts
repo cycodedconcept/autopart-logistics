@@ -28,6 +28,8 @@ export type MenuItem =
 export interface MenuContextItem {
   active: string;
   color: string;
+  showSidebar: boolean;
   setActive: React.Dispatch<React.SetStateAction<MenuItem>>;
   setColor: React.Dispatch<React.SetStateAction<string>>;
+  setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }

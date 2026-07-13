@@ -110,7 +110,7 @@ const Sidebar = ({
 }) => {
   //   const { openItem, setOpenItem, user, logout, smallNav, setSmallNav } = useUser();
 
-  const {active, color, setColor, setActive} = useMenu()
+  const {active, color, setColor, setActive, setShowSidebar} = useMenu()
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -125,16 +125,16 @@ const Sidebar = ({
     >
       <div className="border-b border-alight-gray-border">
 
-      <div className="flex items-center gap-2 px-4 py-5 ">
-        {/* {collapsed && (
-          <div className="flex md:hidden w-7 h-7 rounded-2xl bg-primary items-center justify-center shrink-0">
+        {collapsed && (
+          <div className="flex lg:hidden pt-4 rounded-2xl bg-primary items-center justify-center shrink-0">
             <X
-              size={14}
+              size={25}
               className="text-white rounded-full bg-aorange"
-              // onClick={() => setSmallNav(!smallNav)}
+              onClick={() => setShowSidebar(false)}
             />
           </div>
-        )} */}
+        )}
+      <div className="flex items-center gap-2 px-4 py-5 ">
 
         {!collapsed ? (
           <Image src={logo} alt="" className="w-32" />
@@ -154,7 +154,7 @@ const Sidebar = ({
           )}
         </button>
       </div>
-        <div className="pt-2 pb-4 px-4">
+        {!collapsed && <div className="pt-2 pb-4 px-4">
           <SearchBar
             value={query}
             onChange={setQuery}
@@ -173,7 +173,7 @@ const Sidebar = ({
               </button>
             }
           />
-        </div>
+        </div>}
       </div>
 
       {!collapsed && (
@@ -197,12 +197,10 @@ const Sidebar = ({
                   display: "flex",
                   alignItems: "center",
                   gap: 10,
-                  padding: "10px 8px",
-                  borderRadius: 8,
+                  padding: "8px",
                   cursor: "pointer",
-                  marginBottom: 2,
-                  background: isActive ? "rgba(255,122,0,0.12)" : "transparent",
                   color: isActive ? "#FF7A00" : "#575757",
+                  fontWeight: isActive ? 600 : 400,
                 }}
               >
                 <Icon

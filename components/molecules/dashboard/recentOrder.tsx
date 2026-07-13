@@ -77,11 +77,11 @@ const RecentOrder = () => {
             : delivered;
   };
   return (
-    <div className="w-4/6 border border-agray-border bg-white rounded-2xl p-4 max-h-125 overflow-y-auto">
+    <div className="lg:w-4/6 border border-agray-border bg-white rounded-2xl p-4 max-h-125 overflow-y-auto">
       <p className="font-medium text-dark-gray pb-4">Recent Order Activity</p>
       {/* upper part of the table */}
-      <section className="flex justify-between lg:gap-2 xl:gap-0 text-dark-gray text-sm">
-        <div className=" flex gap-2 items-center">
+      <section className="flex justify-between gap-2 xl:gap-0 text-dark-gray text-sm flex-col lg:flex-row">
+        <div className=" flex  gap-2 items-center">
           <div className="relative w-fit">
             <ChevronDown size={17} className="absolute top-3.5 right-4" />
             <select className="text-dark-gray">
@@ -101,14 +101,15 @@ const RecentOrder = () => {
             <Image src={filter} alt="" className="w-4" />
             <span>Filter</span>
           </div>
-          <div className="flex lg:w-[5.7rem] xl:w-[6.2rem] items-center gap-1 border border-agray-border rounded-lg lg:px-2 xl:px-3 py-2">
+          <div className="flex w-[6.2rem] lg:w-[5.7rem] xl:w-[6.2rem] items-center gap-1 border border-agray-border rounded-lg px-3 lg:px-2 xl:px-3 py-2">
             <Image src={sort} alt="" className="w-5" />
             <span>Sort By</span>
           </div>
         </div>
       </section>
+<div className="w-full">
 
-      <div className="w-full mt-4 rounded-lg border border-agray-border">
+      <div className="w-full mt-4 rounded-lg border border-agray-border overflow-x-auto min-w-xl">
         <table className="w-full border-separate border-spacing-0">
           <thead className="bg-background">
             <tr className="text-light-gray text-sm">
@@ -163,6 +164,7 @@ const RecentOrder = () => {
           </tbody>
         </table>
       </div>
+</div>
     </div>
   );
 };

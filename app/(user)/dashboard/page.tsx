@@ -76,9 +76,9 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="pt-5 flex w-full gap-3">
+      <div className="pt-5 flex flex-col lg:flex-row w-full gap-3">
         <RecentOrder />
-        <div className="w-2/6 border border-agray-border bg-white rounded-2xl py-4 px-3 max-h-124 overflow-y-auto">
+        <div className="lg:w-2/6 border border-agray-border bg-white rounded-2xl py-4 my-2 lg:my-0 px-3 max-h-124 overflow-y-auto">
           <div className="flex justify-between ">
             <span className="font-medium text-dark-gray pb-4">
               Weekly Top Driver
@@ -88,7 +88,7 @@ const Dashboard = () => {
           <div>
             {people.map((each) => {
               return (
-                <div className="flex items-center justify-between py-2">
+                <div key={each.id} className="flex items-center justify-between py-2">
                   <div className="flex items-center gap-2">
                     <Image src={profpix} alt="" className="w-14" />
                     <p className="truncate text-ellipsis w-full lg:max-w-20 xl:max-w-sm text-dark-gray font-medium">{each.name}</p>
