@@ -120,7 +120,7 @@ const Sidebar = ({
   return (
     <aside
       className={`relative flex flex-col h-screen bg-white border-r border-gray-100 transition-all duration-300 ml-2 ${
-        collapsed ? "w-16" : "w-60"
+        collapsed ? "w-16" : "w-60 2xl:w-96"
       }`}
     >
       <div className="border-b border-alight-gray-border">
@@ -196,7 +196,7 @@ const Sidebar = ({
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 12,
+                  gap: 10,
                   padding: "10px 8px",
                   borderRadius: 8,
                   cursor: "pointer",

@@ -24,8 +24,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-inter: var(--font-inter), sans-serif;
+  --font-instrument-sans: var(--font-instrument-sans), sans-serif;
+
   --color-aorange: var(--aorange);
   --color-dark-gray: var(--dark-gray);
   --color-light-gray: var(--light-gray);
@@ -53,5 +55,50 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+}
+
+select {
+  /* Removes default browser styling (crucial for borders to work consistently) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Custom Border Configuration */
+  border: 1px solid var(--agray-border);
+  border-radius: 8px;
+  
+  /* Required Presentation Padding */
+  padding: 10px 50px 10px 15px; 
+  background-color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+select[id="order-cal"]{
+  padding: 10px 30px 10px 35px; 
+
+}
+select:focus {
+  outline: none;
+  box-shadow: 1px 1px 10px #cecece;
+}
+
+th,td{
+  padding-left: 2px;
+  padding-right: 2px;
+}
+th{
+  vertical-align: baseline;
+}
+
+
+@media (min-width: 1020px) and (max-width: 1030px) {
+  select {
+  padding: 10px 35px 10px 10px; 
+
+  }
+  select[id="order-cal"]{
+  padding: 10px 30px 10px 30px; 
+
+}
 }
