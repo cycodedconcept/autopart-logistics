@@ -1,15 +1,7 @@
-"use client"
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter()
-  useEffect(()=>{
-
-    router.push("/dashboard")
-  },[])
-
   return (
-    <div></div>
+    redirect("/login")
   );
 }

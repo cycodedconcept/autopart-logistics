@@ -18,7 +18,7 @@
   --agray: #A5A5A5;
   --agray-border: #D7D7D7;
   --alight-gray-border: #EDEDED;
-
+  --subtitle-gray: #9E9E9E;
 }
 
 @theme inline {
@@ -43,6 +43,7 @@
   --color-agray: var(--agray);
   --color-agray-border: var(--agray-border);
   --color-alight-gray-border: var(--alight-gray-border);
+  --color-subtitle-gray: var(--subtitle-gray)
 }
 
 /* @media (prefers-color-scheme: dark) {

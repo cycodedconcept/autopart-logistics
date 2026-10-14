@@ -24,10 +24,12 @@ import { SearchBar } from "./searchBar";
 import command from "@/public/images/caommand-button.png"
 import { useMenu } from "@/context/menuContext";
 import { MenuItem } from "@/types/menu";
+import Link from "next/link";
 
 interface MenuItemType {
   key: MenuItem;
   label: string;
+  link: string
 }
 export const ICONS = {
   dashboard: DashboardIcon,
@@ -57,15 +59,15 @@ export const Icon = ({
   return <Cmp color={color} size={size} {...props} />;
 };
 const MENU: MenuItemType[] = [
-  { key: "dashboard", label: "Dashboard" },
-  { key: "analytics", label: "Analytics" },
-  { key: "tracking", label: "Tracking" },
-  { key: "customer", label: "Customer" },
-  { key: "clients", label: "Clients" },
-  { key: "companies", label: "Companies" },
-  { key: "attendance", label: "Attendance" },
-  { key: "message", label: "Message" },
-  { key: "settings", label: "Settings" },
+  { link: "/dashboard", key: "dashboard", label: "Dashboard" },
+  { link: "#", key: "analytics", label: "Analytics" },
+  { link: "", key: "tracking", label: "Tracking" },
+  { link: "", key: "customer", label: "Customer" },
+  { link: "", key: "clients", label: "Clients" },
+  { link: "", key: "companies", label: "Companies" },
+  { link: "/attendance", key: "attendance", label: "Attendance" },
+  { link: "", key: "message", label: "Message" },
+  { link: "", key: "settings", label: "Settings" },
 ];
 
 // const navItems = [
@@ -116,6 +118,9 @@ const Sidebar = ({
   const router = useRouter();
 
   function handleSearch(q: string) {}
+  const handleNav = (nav: MenuItemType) => {
+    setActive(nav.key)
+  }
 
   return (
     <aside
@@ -187,7 +192,8 @@ const Sidebar = ({
           const { key, label } = item;
           const isActive = active === item.key;
           return (
-            <div key={label}>
+            <Link key={label} href={item.link}>
+            <div >
               <div
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-base cursor-pointer transition-colors 
                    
@@ -215,6 +221,7 @@ const Sidebar = ({
                 )}
               </div>
             </div>
+            </Link>
           );
         })}
       </nav>
